@@ -1,7 +1,7 @@
 echo "# react-use-popcorn" >> README.md
 git init
 git add --all
-git commit -m "Chapter 10: Thinking in React Components, Composition, and Reusability >> Tutorial 03: How to Split a UI Into Components"
+git commit -m "Chapter 10: Thinking in React Components, Composition, and Reusability >> Tutorial 04: Splitting Components in Practice"
 git branch -M main
 git remote add origin https://github.com/Muhammad-Sabbir/react-use-popcorn.git
 git push -u origin main
@@ -10,5 +10,5 @@ git push -u origin main
 
 
 git add --all
-git commit -m "Chapter 10: Thinking in React Components, Composition, and Reusability >> Tutorial 03: How to Split a UI Into Components"
+git commit -m "Chapter 10: Thinking in React Components, Composition, and Reusability >> Tutorial 06: Prop Drilling"
 git push -u origin main

@@ -10,5 +10,5 @@ git push -u origin main
 
 
 git add --all
-git commit -m "Chapter 10: Thinking in React Components, Composition, and Reusability >> Tutorial 13: Handling Hover Events"
+git commit -m "Chapter 10: Thinking in React Components, Composition, and Reusability >> Tutorial 15: Improving Reusability With Props"
 git push -u origin main

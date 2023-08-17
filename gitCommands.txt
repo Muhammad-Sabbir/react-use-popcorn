@@ -9,5 +9,5 @@ git push -u origin main
 
 
 git add --all
-git commit -m "Chapter 12: Effects and Data Fetching >> Tutorial 4: useEffect to the Rescue"
+git commit -m "Chapter 12: Effects and Data Fetching >> 6. Using an async Function"
 git push -u origin main

@@ -8,7 +8,6 @@ git push -u origin main
 
 
 
-
 git add --all
-git commit -m "Chapter 10: Thinking in React Components, Composition, and Reusability >> Tutorial 16: PropTypes"
+git commit -m "Chapter 12: Effects and Data Fetching >> Tutorial 4: useEffect to the Rescue"
 git push -u origin main

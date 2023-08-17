@@ -9,5 +9,5 @@ git push -u origin main
 
 
 git add --all
-git commit -m "Chapter 12: Effects and Data Fetching >> 8. Handling Errors"
+git commit -m "Chapter 12: Effects and Data Fetching >> 10. Synchronizing Queries With Movie Data"
 git push -u origin main

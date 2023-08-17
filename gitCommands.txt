@@ -9,5 +9,5 @@ git push -u origin main
 
 
 git add --all
-git commit -m "Chapter 12: Effects and Data Fetching >> 6. Using an async Function"
+git commit -m "Chapter 12: Effects and Data Fetching >> 7. Adding a Loading State"
 git push -u origin main

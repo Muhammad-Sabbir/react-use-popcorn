@@ -292,7 +292,7 @@ export default function App() {
     }
     fetchMovies();
     return function () {
-      controller.AbortController();
+      controller.abort();
     };
   }, [query]);
 

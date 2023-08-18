@@ -259,12 +259,14 @@ export default function App() {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
   }
   useEffect(() => {
+    const controller = new AbortController();
     async function fetchMovies() {
       try {
         setIsLoading(true);
         setError("");
         const res = await fetch(
-          `http://www.omdbapi.com/?&apikey=${KEY}&s=${query}`
+          `http://www.omdbapi.com/?&apikey=${KEY}&s=${query}`,
+          { signal: controller.signal }
         );
         if (!res.ok)
           throw new Error("Something went wrong with fetching movies");
@@ -275,7 +277,10 @@ export default function App() {
         // console.log(data.Search);
       } catch (err) {
         console.log(err.message);
-        setError(err.message);
+        if (err.name !== "AbortError") {
+          setError(err.message);
+          setError("");
+        }
       } finally {
         setIsLoading(false);
       }
@@ -286,6 +291,9 @@ export default function App() {
       return;
     }
     fetchMovies();
+    return function () {
+      controller.AbortController();
+    };
   }, [query]);
 
   return (

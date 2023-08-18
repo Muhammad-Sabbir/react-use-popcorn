@@ -9,5 +9,5 @@ git push -u origin main
 
 
 git add --all
-git commit -m "Chapter 12: Effects and Data Fetching >> 12. Loading Movie Details"
+git commit -m "Chapter 12: Effects and Data Fetching >> 13. Adding a Watched Movie"
 git push -u origin main

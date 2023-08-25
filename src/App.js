@@ -231,7 +231,6 @@ export default function App() {
   const [error, setError] = useState("");
   const [selectedId, setSelectedId] = useState(null);
 
-  /*
   useEffect(function () {
     console.log("After initial render");
   }, []);
@@ -240,12 +239,14 @@ export default function App() {
   });
   useEffect(
     function () {
-      console.log("D");
+      console.log(
+        "Runs on the first render, And any time any dependency value changes"
+      );
     },
     [query]
   );
   console.log("During render");
-*/
+
   function handleSelectedMovie(id) {
     setSelectedId((selectedId) => (id === selectedId ? null : id));
   }
@@ -275,7 +276,7 @@ export default function App() {
         const data = await res.json();
         if (data.Response === "False") throw new Error("Movie not found");
         setMovies(data.Search);
-        // console.log(data.Search);
+        console.log(data.Search);
       } catch (err) {
         console.log(err.message);
         if (err.name !== "AbortError") {

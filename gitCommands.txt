@@ -9,5 +9,5 @@ git push -u origin main
 
 
 git add --all
-git commit -m "Chapter 13: Custom Hooks, Refs, and More State >> 4. More Details of useState"
+git commit -m "Chapter 13: Custom Hooks, Refs, and More State >> 5. Initializing State With a Callback (Lazy Initial State)"
 git push -u origin main

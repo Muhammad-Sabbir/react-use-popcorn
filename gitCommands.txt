@@ -9,5 +9,5 @@ git push -u origin main
 
 
 git add --all
-git commit -m "Chapter 13: Custom Hooks, Refs, and More State >> 9. Refs to Select DOM Elements"
+git commit -m "Chapter 13: Custom Hooks, Refs, and More State >> 10. Refs to Persist Data Between Renders"
 git push -u origin main

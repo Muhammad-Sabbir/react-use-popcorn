@@ -207,6 +207,7 @@ export default function App() {
     //we cant pass parameter into this function.
 
     const storedValue = localStorage.getItem("watched");
+    if (storedValue === null) return [];
     return JSON.parse(storedValue);
   });
   function handleSelectedMovie(id) {
@@ -321,6 +322,15 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState("");
+
+  const countRef = useRef(0);
+  useEffect(
+    function () {
+      if (userRating) countRef.current = countRef.current + 1;
+    },
+    [userRating]
+  );
+
   const isWatched = watched
     .map((movieObj) => movieObj.imdbID)
     .includes(selectedId);
@@ -351,6 +361,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
       imdbRating: Number(imdbRating),
       runtime: Number(runtime.split(" ").at([0])),
       userRating,
+      countRatingDecisions: countRef.current,
     };
     onAddWatched(newWatchedMovie);
     onCloseMovie();

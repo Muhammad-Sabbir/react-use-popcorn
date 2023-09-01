@@ -9,5 +9,5 @@ git push -u origin main
 
 
 git add --all
-git commit -m "Chapter 13: Custom Hooks, Refs, and More State >> 12. Creating our First Custom Hook useMovies"
+git commit -m "Chapter 13: Custom Hooks, Refs, and More State >> 13. Creating useLocalStorageState"
 git push -u origin main

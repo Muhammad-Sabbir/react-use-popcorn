@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import StartRating from "./StarRating";
 import { useMovies } from "./useMovies";
+import { useLocalStorageState } from "./useLocalStorageState";
 
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
@@ -202,14 +203,8 @@ export default function App() {
   // const { movies, isLoading, error } = useMovies(query, handleCloseMovie); // we can use handleCloseMovie function befor actually its defined, because we use normal function declaration(hoisted) not arrow function declaration within a const variable [const handleCloseMovie = ()=>{}], if we use arrow function syntax then this won't work
   const { movies, isLoading, error } = useMovies(query);
 
-  // const [watched, setWatched] = useState([]);
-  const [watched, setWatched] = useState(function () {
-    //we cant pass parameter into this function.
+  const [watched, setWatched] = useLocalStorageState([], "watched");
 
-    const storedValue = localStorage.getItem("watched");
-    if (storedValue === null) return [];
-    return JSON.parse(storedValue);
-  });
   function handleSelectedMovie(id) {
     setSelectedId((selectedId) => (id === selectedId ? null : id));
   }
@@ -223,12 +218,6 @@ export default function App() {
   function handleDeleteWatched(id) {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
   }
-  useEffect(
-    function () {
-      localStorage.setItem("watched", JSON.stringify(watched));
-    },
-    [watched]
-  );
 
   return (
     <>
